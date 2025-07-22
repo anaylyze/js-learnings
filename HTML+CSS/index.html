@@ -1,0 +1,307 @@
+<html>
+<head>
+    <title>X. It's what's happening / X</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .container{
+            display: flex;
+        }
+        .left{
+            padding-top: 150;
+            padding-left: 200;
+        }
+        .right{
+            color: white;
+            padding-top: 10;
+            padding-left: 160;
+        }
+        .right h1{
+            font-size: 60;
+            font-weight: 900;
+        }
+        .right h2{
+            font-size: 30;
+            font-weight: 500;
+        }
+        .signup-button{
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 0px 20px;
+            margin-top: 20px;
+            margin-right: 150px;
+            border-radius: 900px;
+            cursor: pointer;
+        }
+        .signup-button img{
+            width: 30;
+            padding-left: 50;
+        }
+        .signup-button p{
+            color: black;
+        }
+        .signup-button:hover{
+            background-color: #e6e6e6;
+        }
+        .or{
+            display: flex;
+            align-items: center;
+        }
+        .text{
+            color: rgb(123, 123, 123);
+            font-weight: bold;
+            padding-left: 10;
+            padding-right: 10;
+        }
+        .line{
+            color: rgb(94, 90, 90);
+            
+        }
+        .create{
+            background-color: #1d9bf0;
+            padding: 0.1;
+            margin-right: 150px;
+            border-radius: 900px;
+            cursor: pointer;
+        }
+        .create p{
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+        .create:hover{
+            background-color: #1789cfd2;
+        }
+        .guidelines{
+            font-size: 12px;
+        }
+        .guidelines a{
+            font-size: 12px;
+            color: rgb(103, 103, 247);
+        }
+        .account p{
+            color: white;
+            font-weight: bold ;
+            padding-top: 30 ;
+        }
+        .sign-in{
+            background-color: black;
+            border: solid 1px #1d9bf0;
+            margin-right: 150px;
+            border-radius: 900px;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 rgba(0, 255, 255, 0); /* start off invisible */
+        }
+        .sign-in p{
+            display: flex;
+            justify-content: center;
+            color: #41b1f7;
+            font-weight: bold;
+        }
+        .sign-in:hover{
+            box-shadow: inset 0 0 10px rgb(1, 104, 104),
+                  inset 0 0 10px rgb(1, 106, 106);
+        }
+        .testis h1{
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+            font-size: 50px;
+            font-weight: 900;
+            
+        }
+        .tweet{
+            background-color: #16181c;
+            margin-top: 50px;
+            padding-top: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+            padding-bottom: 10px;
+            border: 1px solid #2f3336;
+            border-radius: 16px;
+            box-shadow: 0 0 10px #1d9bf099;
+        }
+        .tweet:hover{
+            box-shadow: 0px 0px 10px pink;
+
+        }
+        .tweet-header{
+            display: flex;
+            padding-left: 20px;
+            
+        }
+        .tweet-header img{
+            border-radius: 50%;
+        }
+        .name{
+            color: white;
+            display:inline;
+            padding-left: 10px;
+        }
+        .quote{
+            color: white;
+            padding-left: 20px;
+        }
+        .time p {
+            color: #8899a6;
+            padding-left: 20px;
+        }
+        .time a {
+            color: #1da1f2;
+            font-weight: bold;
+        }
+        .grid {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        .column2{
+            max-width: 620px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="left">
+            <img src="X.jpg" width="300">
+        </div>
+
+        <div class="right">
+            <h1>Happening now</h1>
+            <h2>Join today.</h2>
+
+            <div class="signup-button">
+                <img src="google.svg" alt="google-logo">
+                <p> Sign up with Google</p>
+            </div>
+
+            <div class="signup-button">
+                <img src="apple.jpg" alt="apple-logo">
+                <p> Sign up with Apple</p>
+            </div>
+
+            <div class="or">
+                <p class="line">----------------------</p>
+                <p class="text"> OR </p>
+                <p class="line">----------------------</p>
+            </div>
+
+            <div class="create">
+                <p>Create account</p>
+            </div>
+
+            <div class="guidelines">
+                <p>By signing up, you agree to the <a>Terms of Service</a> and <a>Privacy<br>  Policy</a>,
+                    including <a>Cookie Use.</a></p>
+            </div>
+
+            <div class="account">
+                <p> Already have an account? </p>
+            </div>
+
+            <div class="sign-in">
+                <p> Sign in</p>
+            </div>
+        </div>
+    </div>
+    <div class="testis">
+        <h1>
+            Tweet Testimonials
+        </h1>
+    </div>
+    <div class="grid">
+        <div class="column1">
+            <div class="tweet">
+                <div class="tweet-header">
+                    <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" alt="photo">
+                
+                    <div class="name">
+                        <strong>Anay Jha</strong><br>
+                        <span>@anaylyze</span>
+                    </div>
+                </div>
+                <div class="quote">
+                    <p>
+                        Be yourself; everyone else is already taken.
+                        ― Oscar Wilde
+                    </p>
+                </div>
+                <div class="time">
+                    <p>07:57 PM · Jul 11,2025 · <a>6,969 Views</a></p>
+                </div>
+            </div>
+
+
+            <div class="tweet">
+                <div class="tweet-header">
+                    <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" alt="photo">
+                
+                    <div class="name">
+                        <strong>Lionel Messi</strong><br>
+                        <span>@goat123</span>
+                    </div>
+                </div>
+                <div class="quote">
+                    <p>
+                        Puta Madrid Puta Paris Puta Van Gaal
+                    </p>
+                </div>
+                <div class="time">
+                    <p>11:57 PM · Aug 09,2024 · <a>100M Views</a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="column2">
+            <div class="tweet">
+                <div class="tweet-header">
+                    <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" alt="photo">
+                
+                    <div class="name">
+                        <strong>Neymar Jr.</strong><br>
+                        <span>@partyboy69</span>
+                    </div>
+                </div>
+                <div class="quote">
+                    <p>
+                        Leaving barca for pissSG was the biggest mistake of my life😭😭😭
+                    </p>
+                </div>
+                <div class="time">
+                    <p>03:57 AM · Dec 05,2024 · <a>88M Views</a></p>
+                </div>
+            </div>
+
+
+            <div class="tweet">
+                <div class="tweet-header">
+                    <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" alt="photo">
+                
+                    <div class="name">
+                        <strong>Harkirat Singh</strong><br>
+                        <span>@hkirat</span>
+                    </div>
+                </div>
+                <div class="quote">
+                    <p>
+                        Man Anay Jha is going to become one of the greatest devs the world has ever seen, Mark my words🖊💯
+                    </p>
+                </div>
+                <div class="time">
+                    <p>05:45 PM · Sept 12,2025 · <a>57K Views</a></p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
