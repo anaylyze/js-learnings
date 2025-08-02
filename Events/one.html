@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #414141; color: aqua;">
+    <h2>Amazing Images</h2>
+    <ul id ='images'>
+        <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+        <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><a style="color: aqua;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+    // we could have use onclick method but it gives us less features as compared to eventlistener
+    
+    // document.getElementById('owl').onclick = function(){
+    //     alert('OWL Clicked!!')
+    // }
+
+
+    // true/false is used for event propagation where false is the case of event bubbling and true is event capturing by default the value is false
+    
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log('clicked inside the ul');
+    }, false) // in bubbling's case the inner element is executed before the outer element --> 1st owl clicked then clicked inside the ul will print
+    
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log('owl clicked');
+        e.stopPropagation(); //stops the element to bubble and move to the outer element 
+    }, false) // whereas in the capturing's case the outer element is executed first --> it will be vice versa
+
+    // type, timestamp, preventDefault, target, toElement, srcElement, 
+    // currentTarget, clientX, clientY, screenX, screenY, 
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault(); // stops the element to perform default event like opening a new tab
+        e.stopPropagation();
+        console.log('clicked on google');
+        
+    },false)
+
+
+</script>
+</html>
+
+<!-- 
+Event Bubbling:
+Events in the browser "bubble up" the DOM.
+
+When an event occurs (like a click on a button), it first runs on the clicked element, then bubbles up to its parent, grandparent, and so on. -->
+
+
+
+<!-- Event Delegation:
+You attach one event listener on a parent element (like <ul>) instead of each child (like every <button>).
+
+Then, use e.target to check what was actually clicked.
+
+✅ Useful when:
+
+You dynamically create elements (like your tasks).
+
+You want better performance and simpler code. -->
+
+
+
+<!-- Local Storage (for Persistence)
+🔸 What It Is:
+Local Storage is a browser feature that lets you store data locally (like an array of todos). It stays there even after the page is refreshed.
+
+Stored as strings
+
+Use JSON.stringify() and JSON.parse() to store and retrieve arrays/objects -->
+
+
+<!-- localStorage.setItem('todos', JSON.stringify(myTodoArray));
+const todos = JSON.parse(localStorage.getItem('todos')); -->

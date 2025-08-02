@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #414141; color: aqua;">
+    <h2>Amazing Images</h2>
+    <ul id ='images'>
+        <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+        <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><a style="color: aqua;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+
+    // MY APPROACH
+
+    // document.getElementById('photoshop').addEventListener('click',function(ev){
+    //     ev.preventDefault();
+    //     console.log(ev)
+    //     const elem1 = document.getElementById('photoshop');
+    //     elem1.remove();
+    // })
+    // document.getElementById('japan').addEventListener('click',function(ev){
+    //     ev.preventDefault();
+    //     console.log(ev)
+    //     const elem2 = document.getElementById('japan');
+    //     elem2.remove();
+    // })
+    // document.getElementById('owl').addEventListener('click',function(ev){
+    //     ev.preventDefault();
+    //     console.log(ev)
+    //     const elem3 = document.getElementById('owl');
+    //     elem3.remove();
+    // })
+    // document.getElementById('prayer').addEventListener('click',function(ev){
+    //     ev.preventDefault();
+    //     console.log(ev)
+    //     const elem4 = document.getElementById('prayer');
+    //     elem4.remove();
+    // })
+    // document.getElementById('river').addEventListener('click',function(ev){
+    //     ev.preventDefault();
+    //     console.log(ev)
+    //     const elem5 = document.getElementById('river');
+    //     elem5.remove();
+    // })
+    // document.getElementById('google').addEventListener('click',function(ev){
+    //     ev.preventDefault();
+    //     console.log(ev)
+    //     const elem6 = document.getElementById('google');
+    //     elem6.remove();
+    // })
+
+
+
+    // BETTER APPROACH TO REMOVE THE BULLET POINTS AS WELL
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        e.preventDefault();
+        console.log(e.target.parentNode); // .target selects the img when clicking and .parentNode allows us to select the image 
+        // along with bullet pts basically the whole list.
+        // if(e.target.tagName === 'IMG'){
+        //     const removeElement = e.target.parentNode;
+        //     removeElement.remove();
+        // }
+        
+        // OR
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.tagName);
+            const removeElement = e.target.parentNode;
+            removeElement.parentNode.removeChild(removeElement);
+        }
+        
+    })
+
+</script>
+</html>

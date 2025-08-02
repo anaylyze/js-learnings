@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET-TIMEOUT</title>
+</head>
+<body>
+    <h1>setTimeout ki line chal rahi hai</h1>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    
+    const sayAnay = function(){
+        console.log("Anay");
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Line Out!!"
+    }
+    const tmkoc = setTimeout(sayAnay, 3000);
+    const tmkc = setTimeout(changeText, 3000);
+
+
+    const btn = document.getElementById('stop');
+
+    btn.addEventListener('click', ()=>{
+        clearTimeout(tmkoc);
+        clearTimeout(tmkc);
+        console.log('issssstopppppppppppppp');
+        
+    })
+</script>
+</html>

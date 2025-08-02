@@ -1,0 +1,105 @@
+open the browser console to access the documentation of any webpage through 
+console.log(window) -> console.log(window.document) or console.dir(document)
+
+can use document.any particular property to access inside the document
+document.links is one particular such thing which gives us all the links in the form of htmlcollection
+which is different from array of js so no methods of array will work on them but we can still use indexing
+to access any particular link.
+
+-> we can manipulate any existing web page by accessing the element by 
+    document.getElementById("firstHeading") and then
+    document.getElementById("firstHeading").innerHTML = "<h1>Anay Jha</h1>"
+    here firstHeading is a unique attribute for the element and using innerHTML we can change the content
+    and getElementById helps in access
+
+
+-> title.innerHTML
+    'THIS IS MY DOM INTRODUCTION <span style="display: none;"> XYZ </span>' 
+    gives you the whole html inside any id or element
+
+-> title.innerText
+    "THIS IS MY DOM INTRODUCTION" 
+    only returns text to you
+
+-> title.textContent
+    "THIS IS MY DOM INTRODUCTION  XYZ " 
+    gives you the whole text even if it is hidden or something
+
+-> document.getElementsByClassName('bg-black')
+   this gives us the element by class name just like by id
+
+
+
+-> document.querySelector('h2')
+    selects the first h2 tag 
+
+-> document.querySelector('#title')
+    selects the id with specific name
+
+-> document.querySelector('.heading')
+    selects the class with name heading
+
+-> document.querySelector('input[type="password"]')
+selects the input field
+
+->  we can change the styling of any element easily by-
+const myul = document.querySelector('ul')
+
+const first = myul.querySelector('li')
+
+first.style.backgroundColor = 'pink'
+
+first.style.padding = '10px'
+we can do the same shit to innerText and others as well
+
+
+-> document.querySelectorAll('li')
+NodeList(3) [ li, li, li]
+
+by using this we get access to the node list return type which somewhat like an array but not actually an array
+which we can tell as it does not have map, reduce, filter like methods.
+
+const tempLi = document.querySelectorAll('Li')
+undefined
+
+tempLi.style.color = 'purple'
+Uncaught TypeError: can't access property "color", tempLi.style is undefined
+    <anonymous> debugger eval code:1
+debugger eval code:1:1
+
+tempLi[0].style.color = 'purple'
+'purple'
+
+
+this tells that we cannot completely style change a whole NodeList but can individually style them
+but we can run a forEach loop in NodeList.
+
+if we do 
+document.getElementsByClassName('list-item')
+HTMLCollection { 0: li.list-item, 1: li.list-item, 2: li.list-item, 3: li.list-item, length: 4 }
+we get a HTMLCollection which has no access to any kinds of loop so we will convert this to an array
+
+this is convert ==>
+const tempCl = document.getElementsByClassName('list-item')
+undefined
+
+tempCl
+HTMLCollection { 0: li.list-item, 1: li.list-item, 2: li.list-item, 3: li.list-item
+, length: 4 }
+
+Array.from(tempCl)
+Array(4) [ li.list-item, li.list-item, li.list-item, li.list-item
+ ]
+
+const myArray = Array.from(tempCl)
+undefined
+
+myArray
+Array(4) [ li.list-item, li.list-item, li.list-item, li.list-item
+ ]
+
+myArray.forEach( (li) =>
+{
+    li.style.backgroundColor = 'yellow'
+}) 
+

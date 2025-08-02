@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET-TIMEOUT</title>
+</head>
+<body>
+    <h1 id="heading">Async ki padhai chal rhi</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    
+
+    const start = document.querySelector('#start');
+    const stop = document.querySelector('#stop');
+    const heading  = document.getElementById('heading');
+
+    const rnd = function(str){
+        heading.innerHTML = `daddyAnay ${Math.floor(Math.random()*10 + 1)}`;
+    }
+
+    start.addEventListener('click',function(){
+        const intervalID = setInterval(rnd,1000);
+        intervalID;
+        console.log('STARTTTTTTTTTTT')
+
+        
+        stop.addEventListener('click',function(){
+        clearInterval(intervalID);
+        console.log('STOPPPPPPPPPPP');
+    })
+    })
+
+    
+</script>
+</html>

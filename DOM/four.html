@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Last Part</title>
+</head>
+<body style="background-color: #212121; color: aqua;">
+    <ul class="language">
+        <li>JAVASCRIPT</li>
+    </ul>
+</body>
+<script>
+    function addLang(lang) {
+        const li = document.createElement('li')
+        li.innerHTML = `${lang}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang('PYTHON');
+    addLang('YAMETE KUDASAI');
+
+    // optimised approach as each time the above method is called the tree is traversing which might cause a problem in large scale 
+    function addOptiLang(lang) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLang('RUST')
+    addOptiLang('GOLANG')
+
+    // EDIT
+    const thirdChild = document.querySelector("li:nth-child(3)")
+    // thirdChild.innerHTML = 'MOJO'
+    const newLi = document.createElement('li')
+    newLi.textContent = 'MOJO'
+    thirdChild.replaceWith(newLi)
+
+    // EDIT
+    const secondChild = document.querySelector("li:nth-child(2)")
+    secondChild.outerHTML = '<li>PHP</li>'
+
+    // remove
+    const lastChild =document.querySelector('li:last-child')
+    lastChild.remove()
+</script>
+</html>

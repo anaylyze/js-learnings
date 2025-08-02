@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    console.log(div)
+    div.className = 'heading';
+    div.id = Math.round(Math.random() *10+1)
+    div.setAttribute('title','generated title')
+    div.style.backgroundColor = 'pink';
+    div.style.padding = "10px";
+
+    // div.innerText = 'JS aur Anay'; //this overwrites existing text same as classname and id but set attribute directly adds the attribute in their which saves one round trip 
+    
+    // another approach
+    const addText = document.createTextNode('JS aur Anay')
+    div.appendChild(addText)
+    
+    // appending div into body
+    document.body.appendChild(div)
+</script>
+</html>

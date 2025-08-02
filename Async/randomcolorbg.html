@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Number Guessing Game</title>
+    <style>
+        a{
+            color: pink;
+            padding: 50% 47%;
+            font-weight: 700;
+            font-style: 'sans-serif';
+            font-size: 2vw;
+        }
+        html,body{
+            height: 100%;
+            background-color: #212121;
+            color: antiquewhite;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        button{
+            color: #212121;
+            background-color: pink;
+            padding: 10px 40px;
+        }
+        #start{
+            margin: 10% 20%;
+        }
+        #stop{
+            margin: 10% 20%;
+        }
+        h1{
+            margin: 10% 20%;
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a target="_blank" href="https://www.youtube.com/"
+        >Youtube</a
+      >
+    </nav>
+
+    <h1 id="h1">Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+
+        const randomColor = function(){
+            const hex = '0123456789ABCDEF';
+            let color = '#';
+
+            for(let i =0; i<6; i++){
+                color += hex[Math.floor(Math.random() * 16)]
+            }
+            return color;
+        }
+
+
+        const randomHead = function(){
+            const hex = '0123456789ABCDEF';
+            let color = '#'
+
+            for(let i=0; i<6; i++){
+                color += hex[Math.floor(Math.random()*16)]
+            }
+            return color;
+        }
+
+        const heading = document.getElementById('h1');
+
+
+        // console.log(randomColor());
+        let  bgInterval;
+        let  headInterval;
+
+        const startChangingColor = function(){
+            if(!bgInterval){
+                bgInterval =  setInterval(changeBgColor,100) // as by stopping bginterval = null therefore we have to set some value for bginterval for the program to run
+            }
+           function changeBgColor(){
+            document.body.style.backgroundColor = randomColor();
+           }
+        }
+        const stopChangingColor = function(){
+            clearInterval(bgInterval);
+            bgInterval = null; //frees up the memory
+        }
+
+
+        const startHeadColor = function(){
+            if(!headInterval){
+                headInterval = setInterval(changeHeadColor,100)
+            }
+            function changeHeadColor(){
+                heading.style.color = randomHead();
+            }
+        };
+        const stopHeadColor = function(){
+            clearInterval(headInterval);
+            headInterval = null;
+        };
+
+        
+        document.getElementById('start').addEventListener
+        ('click',startChangingColor);
+        document.getElementById('stop').addEventListener
+        ('click',stopChangingColor);
+
+        document.getElementById('start').addEventListener
+        ('click',startHeadColor);
+        document.getElementById('stop').addEventListener
+        ('click',stopHeadColor);
+
+        
+
+        
+    </script>
+  </body>
+</html>
